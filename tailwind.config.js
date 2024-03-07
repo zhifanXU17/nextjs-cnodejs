@@ -6,7 +6,11 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        backdrop: "hsl(0deg 0% 0% / 0.75)",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="card mx-auto my-10  max-w-6xl border border-gray-300 bg-white">
+    <section className="card mx-auto my-10  max-w-6xl border border-gray-300 bg-white">
       <div className="card-body">
         <h2 className="card-title">关于</h2>
         <p>
@@ -30,6 +30,6 @@ export default function About() {
           </a>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
