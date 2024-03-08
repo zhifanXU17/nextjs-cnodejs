@@ -3,11 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import * as dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
-import relativeTime from "dayjs/plugin/relativeTime";
-dayjs.locale("zh-cn");
-dayjs.extend(relativeTime);
+import { formatImageUrl, dateFromNow } from "@/utils/helpers";
 
 export default function Topic({
   avatar,
@@ -27,18 +23,13 @@ export default function Topic({
     tag = <div className="badge badge-info text-xs text-white">问答</div>;
   }
 
-  let avatarUrl = avatar;
-  if (!avatarUrl.includes("http") || !avatarUrl.includes("https")) {
-    avatarUrl = `http:${avatarUrl}`;
-  }
-
-  const timeTag = dayjs(lastReplyTime).fromNow();
+  const timeTag = dateFromNow(lastReplyTime);
 
   return (
     <li className="flex items-center justify-between gap-6 p-2.5">
       <Image
         alt="Avatar of User"
-        src={avatarUrl}
+        src={formatImageUrl(avatar)}
         className="h-8 w-8 rounded-full"
         width={32}
         height={32}
@@ -53,7 +44,7 @@ export default function Topic({
 
       <Link
         className="text-link line-clamp-1 flex-1 hover:text-blue-400"
-        href={`/posting/${postingId}`}
+        href={`/topic/${postingId}`}
       >
         {title}
       </Link>
