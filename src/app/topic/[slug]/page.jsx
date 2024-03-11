@@ -23,7 +23,7 @@ export default function Page({ params }) {
   }
 
   return isLoading ? (
-    <div className="mx-auto my-10 rounded-2xl max-w-6xl border border-gray-300 bg-white p-5">
+    <div className="border border-gray-300  w-full max-w-6xl my-10 mx-auto rounded-2xl bg-white p-5">
       <div className="flex flex-col gap-4 w-full">
         <div className="skeleton h-32 w-full"></div>
         <div className="skeleton h-4 w-full"></div>
@@ -34,7 +34,7 @@ export default function Page({ params }) {
       </div>
     </div>
   ) : error ? (
-    <div role="alert" className="alert alert-error max-w-6xl mt-10 mx-auto">
+    <div role="alert" className="alert alert-error max-w-6xl my-10 mx-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="stroke-current shrink-0 h-6 w-6"
@@ -52,7 +52,7 @@ export default function Page({ params }) {
       <p>{error.toString()}</p>
     </div>
   ) : (
-    <div className="flex justify-between gap-4 h-full max-w-6xl mx-auto py-5">
+    <div className="flex justify-between gap-4 h-full max-w-6xl my-10 mx-auto">
       <article className="flex-1 p-5 h-fit mx-auto rounded-2xl border border-gray-300 bg-white">
         <header className="border-b border-b-gray-300 pb-6">
           <h2 className="card-title mb-2">{postingDetail.title}</h2>
@@ -67,7 +67,7 @@ export default function Page({ params }) {
           </div>
         </header>
 
-        <section className="py-6">
+        <section className="py-6 max-w-4xl">
           <div
             dangerouslySetInnerHTML={renderMarkdownToHTML(
               postingDetail.content,

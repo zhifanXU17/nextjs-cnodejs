@@ -1,4 +1,4 @@
-import * as DOMPurify from "dompurify";
+import DOMPurify from "dompurify";
 
 import * as dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
@@ -44,10 +44,13 @@ export function dateFromNow(date) {
 }
 
 export function formatImageUrl(url) {
-  if (url.includes("http") || url.includes("https")) {
+  const isHTTP = (address) => /^http/.test(address);
+  const isHTTPS = (address) => /^https/.test(address);
+
+  if (isHTTP(url) || isHTTPS(url)) {
     return url;
   } else {
-    return `https:${url}`;
+    return `http:${url}`;
   }
 }
 

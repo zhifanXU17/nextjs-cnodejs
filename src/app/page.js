@@ -31,7 +31,7 @@ export default function Home() {
   }
 
   return (
-    <div className="card mx-auto my-10 max-w-6xl border border-gray-300 bg-white p-5">
+    <div className="mx-auto my-10 w-full max-w-6xl border border-gray-300 rounded-2xl bg-white p-5">
       <ul role="tablist" className="tabs tabs-bordered mb-4">
         <li
           role="tab"

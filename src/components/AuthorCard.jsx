@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { dateFromNow } from "@/utils/helpers";
+import { dateFromNow, formatImageUrl } from "@/utils/helpers";
 
 function AuthorCard({ avatarUrl, loginName, score, githubUsername, createAt }) {
   return (
@@ -11,7 +11,7 @@ function AuthorCard({ avatarUrl, loginName, score, githubUsername, createAt }) {
         <Image
           width={12}
           height={12}
-          src={avatarUrl}
+          src={formatImageUrl(avatarUrl)}
           alt="avatar_url"
           className="w-12 h-12"
         />

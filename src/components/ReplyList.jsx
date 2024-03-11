@@ -22,7 +22,7 @@ export default function ReplyList({ replies, replyCount }) {
             className="flex justify-between gap-4 border-t border-t-gray-300 px-5 py-3"
           >
             <div className="avatar">
-              <div className="w-12 rounded">
+              <div className="w-8 h-8 rounded">
                 <Image
                   width={12}
                   height={12}

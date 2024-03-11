@@ -1,9 +1,10 @@
-import { Inter } from "next/font/google";
+import { Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Serif({ subsets: ["latin"] });
 
 export const metadata = {
   title: "CNodeJS 社区",
@@ -13,9 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="zh-Hans">
-      <body className={inter.className + " h-full bg-gray-50"}>
+      <body
+        className={
+          noto.className +
+          " min-h-screen flex flex-col justify-between bg-gray-50"
+        }
+      >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
